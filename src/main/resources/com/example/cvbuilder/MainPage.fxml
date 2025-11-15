@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.MainPageController">
+   <children>
+      <Label layoutX="245.0" layoutY="29.0" text="CV Builder" textFill="#6e17e8">
+         <font>
+            <Font name="Bell MT" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="66.0" text="Provide the following Informations to generate your personalized CV!" textFill="#1acc1d" />
+      <Label layoutX="22.0" layoutY="119.0" text="Full Name:" />
+      <TextField fx:id="FullName" layoutX="123.0" layoutY="115.0" onAction="#onNameWritten" prefHeight="25.0" prefWidth="255.0" promptText="Enter your name" />
+      <Label layoutX="22.0" layoutY="149.0" text="Email Address:" />
+      <TextField layoutX="123.0" layoutY="145.0" prefHeight="25.0" prefWidth="255.0" promptText="Enter your Email Address" />
+      <Label layoutX="22.0" layoutY="180.0" text="Phone Number:" />
+      <TextField layoutX="123.0" layoutY="176.0" prefHeight="25.0" prefWidth="255.0" promptText="Enter your Phone Number" />
+      <Label layoutX="23.0" layoutY="243.0" style="-fx-border-style: #0000FF;" text="Educational Qualifications:" textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="281.0" text="SSC" />
+      <TextField layoutX="64.0" layoutY="277.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter School Name" />
+      <TextField layoutX="418.0" layoutY="277.0" prefHeight="25.0" prefWidth="92.0" promptText="Enter GPA" />
+      <Label layoutX="22.0" layoutY="314.0" text="HSC" />
+      <TextField layoutX="64.0" layoutY="310.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter College Name" />
+      <TextField layoutX="418.0" layoutY="310.0" prefHeight="25.0" prefWidth="92.0" promptText="Enter GPA" />
+      <Label layoutX="21.0" layoutY="348.0" text="Hons" />
+      <TextField layoutX="64.0" layoutY="344.0" prefHeight="25.0" prefWidth="221.0" promptText="Enter University Name" />
+      <TextField layoutX="418.0" layoutY="344.0" prefHeight="25.0" prefWidth="92.0" promptText="Enter CGPA" />
+      <Label layoutX="22.0" layoutY="211.0" text="Address:" />
+      <TextField layoutX="123.0" layoutY="207.0" prefHeight="25.0" prefWidth="255.0" promptText="Enter your Address" />
+      <TextField layoutX="310.0" layoutY="277.0" prefHeight="25.0" prefWidth="89.0" promptText="Group Name" />
+      <TextField layoutX="310.0" layoutY="310.0" prefHeight="25.0" prefWidth="89.0" promptText="Group Name" />
+      <TextField layoutX="310.0" layoutY="344.0" prefHeight="25.0" prefWidth="89.0" promptText="Dept Name" />
+   </children>
+</AnchorPane>
