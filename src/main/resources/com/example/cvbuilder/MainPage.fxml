@@ -74,7 +74,13 @@
                 </Label>
 
                 <TextField fx:id="Skills" layoutX="20.0" layoutY="625.0" prefHeight="33.0" prefWidth="528.0" promptText="Enter your skills (comma separated)" />
-                <Button layoutX="259.0" layoutY="710.0" mnemonicParsing="false" onAction="#onBuildCV" style="-fx-background-color: #0000FF;" text="Build CV" textFill="WHITE" />
+                <Button layoutX="265.0" layoutY="808.0" mnemonicParsing="false" onAction="#onBuildCV" style="-fx-background-color: #0000FF;" text="Build CV" textFill="WHITE" />
+            <Label layoutX="21.0" layoutY="687.0" text="Projects:" textFill="#26e08f">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Projects" layoutX="20.0" layoutY="719.0" prefHeight="33.0" prefWidth="528.0" promptText="Enter your projects (comma separated)" />
 
 
             </children>

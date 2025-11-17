@@ -20,7 +20,8 @@ public class outputController {
     @FXML
     private Label Org3, From3, To3;
     @FXML
-    private Label Skills;
+    private Label Skills, projects;
+
 
     public void setData(String fullName, String email, String phone, String address,
                         String ssc, String sscGroup, String sscGPA,
@@ -29,7 +30,7 @@ public class outputController {
                         String org1, String from1, String to1,
                         String org2, String from2, String to2,
                         String org3, String from3, String to3,
-                        String skills) {
+                        String skills, String Projects) {
 
         FullName.setText(fullName);
         Email.setText(email);
@@ -54,5 +55,6 @@ public class outputController {
         From3.setText(from3);
         To3.setText(to3);
         Skills.setText(skills);
+        projects.setText(Projects);
     }
 }

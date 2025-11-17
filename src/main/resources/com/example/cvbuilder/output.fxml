@@ -1,94 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="600.0" style="-fx-background-color: #46E894;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.outputController">
+<ScrollPane fitToWidth="true" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.outputController">
+    <content>
+        <AnchorPane prefHeight="900.0" prefWidth="600.0" style="-fx-background-color: #46E894;">
 
-    <children>
-
-        <Label layoutX="229.0" layoutY="33.0" text="CURRICULAM VITAE of">
-            <font><Font size="14.0" /></font>
-        </Label>
-        <Line endX="290.0" layoutX="300.0" layoutY="109.0" startX="-290.0" />
-
-        <Label layoutX="14.0" layoutY="114.0" text="Contact">
-            <font><Font name="Arial Bold" size="17.0" /></font>
-        </Label>
-        <Line endX="-23.0" layoutX="110.0" layoutY="138.0" startX="-100.0" />
-
-        <Label fx:id="Email" layoutX="14.0" layoutY="148.0" />
-        <Label fx:id="Phone" layoutX="14.0" layoutY="173.0" />
-        <Label fx:id="Address" layoutX="14.0" layoutY="198.0" />
-
-        <Label layoutX="14.0" layoutY="232.0" text="Educational Qualifications">
-            <font><Font name="Arial Bold" size="17.0" /></font>
-        </Label>
-        <Line endX="128.0" layoutX="111.0" layoutY="262.0" startX="-100.0" />
-
-        <Label layoutX="14.0" layoutY="277.0" text="SSC:" />
-        <Label fx:id="SSC" layoutX="48.0" layoutY="277.0" />
-        <Label layoutX="371.0" layoutY="277.0" text="GPA:" />
-        <Label fx:id="SSCGPA" layoutX="410.0" layoutY="277.0" />
-        <Label layoutX="478.0" layoutY="277.0" text="Group:" />
-        <Label fx:id="SSCGroup" layoutX="527.0" layoutY="277.0" />
-
-        <Label layoutX="14.0" layoutY="305.0" text="HSC:" />
-        <Label fx:id="HSC" layoutX="48.0" layoutY="305.0" />
-        <Label layoutX="371.0" layoutY="305.0" text="GPA:" />
-        <Label fx:id="HSCGPA" layoutX="410.0" layoutY="305.0" />
-        <Label layoutX="478.0" layoutY="305.0" text="Group:" />
-        <Label fx:id="HSCGroup" layoutX="527.0" layoutY="305.0" />
-
-        <Label layoutX="14.0" layoutY="332.0" text="Hons:" />
-        <Label fx:id="Hons" layoutX="50.0" layoutY="332.0" />
-        <Label layoutX="373.0" layoutY="332.0" text="CGPA:" />
-        <Label fx:id="HonsCGPA" layoutX="412.0" layoutY="332.0" />
-        <Label layoutX="479.0" layoutY="332.0" text="Dept:" />
-        <Label fx:id="HonsDept" layoutX="527.0" layoutY="332.0" />
-
-        <Label layoutX="14.0" layoutY="369.0" text="Work Experience">
-            <font><Font name="Arial Bold" size="17.0" /></font>
-        </Label>
-        <Line endX="46.0" layoutX="111.0" layoutY="399.0" startX="-100.0" />
-
-        <Label fx:id="Org1" layoutX="15.0" layoutY="414.0" />
-        <Label layoutX="240.0" layoutY="414.0" text="From" />
-        <Label fx:id="From1" layoutX="279.0" layoutY="414.0" />
-        <Label layoutX="345.0" layoutY="414.0" text="To" />
-        <Label fx:id="To1" layoutX="368.0" layoutY="414.0" />
-
-        <Label fx:id="Org2" layoutX="15.0" layoutY="440.0" />
-        <Label layoutX="240.0" layoutY="440.0" text="From" />
-        <Label fx:id="From2" layoutX="279.0" layoutY="440.0" />
-        <Label layoutX="345.0" layoutY="440.0" text="To" />
-        <Label fx:id="To2" layoutX="368.0" layoutY="440.0" />
-
-        <Label fx:id="Org3" layoutX="15.0" layoutY="467.0" />
-        <Label layoutX="240.0" layoutY="467.0" text="From" />
-        <Label fx:id="From3" layoutX="279.0" layoutY="467.0" />
-        <Label layoutX="345.0" layoutY="467.0" text="To" />
-        <Label fx:id="To3" layoutX="368.0" layoutY="467.0" />
-
-        <Label layoutX="14.0" layoutY="503.0" text="Skills">
-            <font><Font name="Arial Bold" size="17.0" /></font>
-        </Label>
-        <Line endX="20.0" layoutX="111.0" layoutY="532.0" startX="-100.0" />
-
-        <Label fx:id="Skills" layoutX="14.0" layoutY="550.0" prefWidth="572.0" wrapText="true" />
-      <VBox alignment="CENTER" layoutX="203.0" layoutY="62.0" prefHeight="30.0" prefWidth="184.0">
-         <children>
-            <Label fx:id="FullName">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
+            <Label layoutX="229.0" layoutY="33.0" text="CURRICULAM VITAE of">
+                <font><Font size="14.0" /></font>
             </Label>
-         </children>
-      </VBox>
+            <Line endX="290.0" layoutX="300.0" layoutY="109.0" startX="-290.0" />
 
-    </children>
+            <Label layoutX="14.0" layoutY="114.0" text="Contact">
+                <font><Font name="Arial Bold" size="17.0" /></font>
+            </Label>
+            <Line endX="-23.0" layoutX="110.0" layoutY="138.0" startX="-100.0" />
+            <Label fx:id="Email" layoutX="14.0" layoutY="148.0" />
+            <Label fx:id="Phone" layoutX="14.0" layoutY="173.0" />
+            <Label fx:id="Address" layoutX="14.0" layoutY="198.0" />
 
-</AnchorPane>
+            <Label layoutX="14.0" layoutY="232.0" text="Educational Qualifications">
+                <font><Font name="Arial Bold" size="17.0" /></font>
+            </Label>
+            <Line endX="128.0" layoutX="111.0" layoutY="262.0" startX="-100.0" />
+            <Label layoutX="14.0" layoutY="277.0" text="SSC:" />
+            <Label fx:id="SSC" layoutX="48.0" layoutY="277.0" />
+            <Label layoutX="371.0" layoutY="277.0" text="GPA:" />
+            <Label fx:id="SSCGPA" layoutX="410.0" layoutY="277.0" />
+            <Label layoutX="478.0" layoutY="277.0" text="Group:" />
+            <Label fx:id="SSCGroup" layoutX="527.0" layoutY="277.0" />
+
+            <Label layoutX="14.0" layoutY="305.0" text="HSC:" />
+            <Label fx:id="HSC" layoutX="48.0" layoutY="305.0" />
+            <Label layoutX="371.0" layoutY="305.0" text="GPA:" />
+            <Label fx:id="HSCGPA" layoutX="410.0" layoutY="305.0" />
+            <Label layoutX="478.0" layoutY="305.0" text="Group:" />
+            <Label fx:id="HSCGroup" layoutX="527.0" layoutY="305.0" />
+
+            <Label layoutX="14.0" layoutY="332.0" text="Hons:" />
+            <Label fx:id="Hons" layoutX="50.0" layoutY="332.0" />
+            <Label layoutX="373.0" layoutY="332.0" text="CGPA:" />
+            <Label fx:id="HonsCGPA" layoutX="412.0" layoutY="332.0" />
+            <Label layoutX="479.0" layoutY="332.0" text="Dept:" />
+            <Label fx:id="HonsDept" layoutX="527.0" layoutY="332.0" />
+
+            <Label layoutX="14.0" layoutY="369.0" text="Work Experience">
+                <font><Font name="Arial Bold" size="17.0" /></font>
+            </Label>
+            <Line endX="46.0" layoutX="111.0" layoutY="399.0" startX="-100.0" />
+            <Label fx:id="Org1" layoutX="15.0" layoutY="414.0" />
+            <Label layoutX="240.0" layoutY="414.0" text="From" />
+            <Label fx:id="From1" layoutX="279.0" layoutY="414.0" />
+            <Label layoutX="345.0" layoutY="414.0" text="To" />
+            <Label fx:id="To1" layoutX="368.0" layoutY="414.0" />
+
+            <Label fx:id="Org2" layoutX="15.0" layoutY="440.0" />
+            <Label layoutX="240.0" layoutY="440.0" text="From" />
+            <Label fx:id="From2" layoutX="279.0" layoutY="440.0" />
+            <Label layoutX="345.0" layoutY="440.0" text="To" />
+            <Label fx:id="To2" layoutX="368.0" layoutY="440.0" />
+
+            <Label fx:id="Org3" layoutX="15.0" layoutY="467.0" />
+            <Label layoutX="240.0" layoutY="467.0" text="From" />
+            <Label fx:id="From3" layoutX="279.0" layoutY="467.0" />
+            <Label layoutX="345.0" layoutY="467.0" text="To" />
+            <Label fx:id="To3" layoutX="368.0" layoutY="467.0" />
+
+            <Label layoutX="14.0" layoutY="503.0" text="Skills">
+                <font><Font name="Arial Bold" size="17.0" /></font>
+            </Label>
+            <Line endX="-47.0" layoutX="111.0" layoutY="532.0" startX="-100.0" />
+            <Label fx:id="Skills" layoutX="14.0" layoutY="550.0" prefWidth="572.0" wrapText="true" />
+
+            <VBox alignment="CENTER" layoutX="203.0" layoutY="62.0" prefHeight="30.0" prefWidth="184.0">
+                <children>
+                    <Label fx:id="FullName">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+
+            <Label layoutX="14.0" layoutY="593.0" text="Projects">
+                <font><Font name="Arial Bold" size="17.0" /></font>
+            </Label>
+            <Line endX="-22.0" layoutX="111.0" layoutY="622.0" startX="-100.0" />
+            <Label fx:id="projects" layoutX="14.0" layoutY="649.0" prefWidth="572.0" wrapText="true" />
+
+        </AnchorPane>
+    </content>
+</ScrollPane>
