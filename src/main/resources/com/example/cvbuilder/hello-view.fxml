@@ -5,18 +5,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3399FF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #0000FF; -fx-background-color: #00AADD;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.HelloController">
    <children>
-      <Label alignment="TOP_CENTER" layoutX="93.0" layoutY="69.0" nodeOrientation="LEFT_TO_RIGHT" text="Welcome to CV Builder" textAlignment="CENTER">
+      <Label alignment="TOP_CENTER" layoutX="105.0" layoutY="75.0" nodeOrientation="LEFT_TO_RIGHT" text="Welcome to CV Builder" textAlignment="CENTER">
          <font>
-            <Font name="Arial" size="40.0" />
+            <Font name="Serif Regular" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="179.0" layoutY="145.0" text="Create your CV in one click" textAlignment="CENTER">
+      <Label layoutX="186.0" layoutY="155.0" text="Create your CV in one click" textAlignment="CENTER">
          <font>
-            <Font name="SansSerif Regular" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="252.0" layoutY="220.0" mnemonicParsing="false" onAction="#onButtonClicked" style="-fx-background-color: #66FFFF;" text="Create New CV" textAlignment="CENTER" />
+      <Button layoutX="252.0" layoutY="220.0" mnemonicParsing="false" onAction="#onButtonClicked" style="-fx-background-color: #00FFFF;" text="Create New CV" textAlignment="CENTER" />
    </children>
 </AnchorPane>

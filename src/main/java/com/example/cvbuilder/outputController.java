@@ -5,15 +5,22 @@ import javafx.scene.control.Label;
 
 public class outputController {
 
-    @FXML private Label FullName, Email, Phone, Address;
-    @FXML private Label lblSSC, lblSSCGroup, lblSSCGPA;
-    @FXML private Label lblHSC, lblHSCGroup, lblHSCGPA;
-    @FXML private Label lblHons, lblHonsDept, lblHonsCGPA;
-    @FXML private Label lblOrg1, lblFrom1, lblTo1;
-    @FXML private Label lblOrg2, lblFrom2, lblTo2;
-    @FXML private Label lblOrg3, lblFrom3, lblTo3;
-
-    @FXML private Label lblSkills;
+    @FXML
+    private Label FullName, Email, Phone, Address;
+    @FXML
+    private Label SSC, SSCGroup, SSCGPA;
+    @FXML
+    private Label HSC, HSCGroup, HSCGPA;
+    @FXML
+    private Label Hons, HonsDept, HonsCGPA;
+    @FXML
+    private Label Org1, From1, To1;
+    @FXML
+    private Label Org2, From2, To2;
+    @FXML
+    private Label Org3, From3, To3;
+    @FXML
+    private Label Skills;
 
     public void setData(String fullName, String email, String phone, String address,
                         String ssc, String sscGroup, String sscGPA,
@@ -28,31 +35,24 @@ public class outputController {
         Email.setText(email);
         Phone.setText(phone);
         Address.setText(address);
-
-        lblSSC.setText(ssc);
-        lblSSCGroup.setText(sscGroup);
-        lblSSCGPA.setText(sscGPA);
-
-        lblHSC.setText(hsc);
-        lblHSCGroup.setText(hscGroup);
-        lblHSCGPA.setText(hscGPA);
-
-        lblHons.setText(hons);
-        lblHonsDept.setText(honsDept);
-        lblHonsCGPA.setText(honsCGPA);
-
-        lblOrg1.setText(org1);
-        lblFrom1.setText(from1);
-        lblTo1.setText(to1);
-
-        lblOrg2.setText(org2);
-        lblFrom2.setText(from2);
-        lblTo2.setText(to2);
-
-        lblOrg3.setText(org3);
-        lblFrom3.setText(from3);
-        lblTo3.setText(to3);
-
-        lblSkills.setText(skills);
+        SSC.setText(ssc);
+        SSCGroup.setText(sscGroup);
+        SSCGPA.setText(sscGPA);
+        HSC.setText(hsc);
+        HSCGroup.setText(hscGroup);
+        HSCGPA.setText(hscGPA);
+        Hons.setText(hons);
+        HonsDept.setText(honsDept);
+        HonsCGPA.setText(honsCGPA);
+        Org1.setText(org1);
+        From1.setText(from1);
+        To1.setText(to1);
+        Org2.setText(org2);
+        From2.setText(from2);
+        To2.setText(to2);
+        Org3.setText(org3);
+        From3.setText(from3);
+        To3.setText(to3);
+        Skills.setText(skills);
     }
 }
