@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.MainPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="764.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.MainPageController">
    <children>
       <Label layoutX="245.0" layoutY="29.0" text="CV Builder" textFill="#6e17e8">
          <font>
@@ -19,7 +19,7 @@
       <TextField layoutX="123.0" layoutY="145.0" prefHeight="25.0" prefWidth="255.0" promptText="Enter your Email Address" />
       <Label layoutX="22.0" layoutY="180.0" text="Phone Number:" />
       <TextField layoutX="123.0" layoutY="176.0" prefHeight="25.0" prefWidth="255.0" promptText="Enter your Phone Number" />
-      <Label layoutX="23.0" layoutY="243.0" style="-fx-border-style: #0000FF;" text="Educational Qualifications:" textFill="#26e08f">
+      <Label layoutX="21.0" layoutY="243.0" style="-fx-border-style: #0000FF;" text="Educational Qualifications:" textFill="#26e08f">
          <font>
             <Font size="14.0" />
          </font>
@@ -38,5 +38,63 @@
       <TextField layoutX="310.0" layoutY="277.0" prefHeight="25.0" prefWidth="89.0" promptText="Group Name" />
       <TextField layoutX="310.0" layoutY="310.0" prefHeight="25.0" prefWidth="89.0" promptText="Group Name" />
       <TextField layoutX="310.0" layoutY="344.0" prefHeight="25.0" prefWidth="89.0" promptText="Dept Name" />
+      <Label layoutX="21.0" layoutY="389.0" style="-fx-border-style: #0000FF;" text="Skills:" textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="65.0" layoutY="383.0" prefHeight="25.0" prefWidth="321.0" promptText="Mention Your skills (comma separated)" />
+      <Label layoutX="21.0" layoutY="429.0" style="-fx-border-style: #0000FF;" text="Work Experience(s):" textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="470.0" style="-fx-border-style: #0000FF;" text="1." textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="53.0" layoutY="463.0" prefHeight="25.0" prefWidth="221.0" promptText="Organization" />
+      <TextField layoutX="304.0" layoutY="463.0" prefHeight="25.0" prefWidth="89.0" promptText="From" />
+      <TextField layoutX="419.0" layoutY="463.0" prefHeight="25.0" prefWidth="89.0" promptText="To" />
+      <Label layoutX="23.0" layoutY="513.0" style="-fx-border-style: #0000FF;" text="2." textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="54.0" layoutY="506.0" prefHeight="25.0" prefWidth="221.0" promptText="Organization" />
+      <TextField layoutX="306.0" layoutY="506.0" prefHeight="25.0" prefWidth="89.0" promptText="From" />
+      <TextField layoutX="421.0" layoutY="506.0" prefHeight="25.0" prefWidth="89.0" promptText="To" />
+      <Label layoutX="22.0" layoutY="555.0" style="-fx-border-style: #0000FF;" text="3." textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="55.0" layoutY="548.0" prefHeight="25.0" prefWidth="221.0" promptText="Organization" />
+      <TextField layoutX="306.0" layoutY="548.0" prefHeight="25.0" prefWidth="89.0" promptText="From" />
+      <TextField layoutX="420.0" layoutY="548.0" prefHeight="25.0" prefWidth="89.0" promptText="To" />
+      <Label layoutX="23.0" layoutY="595.0" style="-fx-border-style: #0000FF;" text="Project(s):" textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="636.0" style="-fx-border-style: #0000FF;" text="1." textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="57.0" layoutY="629.0" prefHeight="25.0" prefWidth="221.0" promptText="Project Information" />
+      <Label layoutX="25.0" layoutY="679.0" style="-fx-border-style: #0000FF;" text="2." textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="58.0" layoutY="672.0" prefHeight="25.0" prefWidth="221.0" promptText="Project Information" />
+      <Label layoutX="24.0" layoutY="721.0" style="-fx-border-style: #0000FF;" text="3." textFill="#26e08f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="58.0" layoutY="714.0" prefHeight="25.0" prefWidth="221.0" promptText="Project Information" />
    </children>
 </AnchorPane>

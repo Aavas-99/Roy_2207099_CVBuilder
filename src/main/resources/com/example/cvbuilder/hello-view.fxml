@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3399FF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.HelloController">
    <children>
       <Label alignment="TOP_CENTER" layoutX="93.0" layoutY="69.0" nodeOrientation="LEFT_TO_RIGHT" text="Welcome to CV Builder" textAlignment="CENTER">
