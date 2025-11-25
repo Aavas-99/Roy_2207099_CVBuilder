@@ -24,4 +24,9 @@ public class HelloController {
         stage.setScene(scene);
 
     }
+
+    @FXML
+    void onDBClicked(ActionEvent event) {
+
+    }
 }
