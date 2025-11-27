@@ -20,6 +20,8 @@
 
                 <Label layoutX="116.0" layoutY="66.0" text="Provide the following Informations to generate your personalized CV!" textFill="#1acc1d" />
 
+                <Label fx:id="modeLabel" layoutX="22.0" layoutY="95.0" text="" />
+
                 <Label layoutX="22.0" layoutY="119.0" text="Full Name:" />
                 <TextField fx:id="FullName" layoutX="123.0" layoutY="115.0" prefHeight="25.0" prefWidth="255.0" promptText="Enter your name" />
 
@@ -74,7 +76,7 @@
                 </Label>
 
                 <TextField fx:id="Skills" layoutX="20.0" layoutY="625.0" prefHeight="33.0" prefWidth="528.0" promptText="Enter your skills (comma separated)" />
-                <Button layoutX="265.0" layoutY="808.0" mnemonicParsing="false" onAction="#onBuildCV" style="-fx-background-color: #0000FF;" text="Build CV" textFill="WHITE" />
+                <Button fx:id="saveButton" layoutX="265.0" layoutY="808.0" mnemonicParsing="false" onAction="#onBuildCV" style="-fx-background-color: #0000FF;" text="Build CV" textFill="WHITE" />
             <Label layoutX="21.0" layoutY="687.0" text="Projects:" textFill="#26e08f">
                <font>
                   <Font size="14.0" />

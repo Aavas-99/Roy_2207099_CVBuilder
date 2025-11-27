@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -44,6 +46,15 @@ public class MainPageController {
     @FXML
     private TextField Projects;
 
+    // New UI elements for edit mode
+    @FXML
+    private Label modeLabel;
+    @FXML
+    private Button saveButton;
+
+    // Edit state: null => insert mode; otherwise edit the record with this id
+    private Integer editingUserId = null;
+
     @FXML
     private void onBuildCV(ActionEvent event) throws IOException {
         if (FullName.getText().isEmpty() || Email.getText().isEmpty() || Phone.getText().isEmpty()) {
@@ -55,17 +66,64 @@ public class MainPageController {
             return;
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("output.fxml"));
-        Parent root = loader.load();
+        if (editingUserId == null) {
+            // Insert mode (existing behavior)
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("output.fxml"));
+            Parent root = loader.load();
 
+            int id = insertIntoDatabase();
 
+            if (id != -1) {
+                outputController controller = loader.getController();
+                controller.setData(
+                        id,
+                        FullName.getText(),
+                        Email.getText(),
+                        Phone.getText(),
+                        Address.getText(),
 
-        int id=insertIntoDatabase();
+                        SSCName.getText(), SSCGroup.getText(), SSCGPA.getText(),
+                        HSCName.getText(), HSCGroup.getText(), HSCGPA.getText(),
+                        HonsName.getText(), HonsDept.getText(), HonsCGPA.getText(),
 
-        if(id!=-1){
+                        Org1.getText(), From1.getText(), To1.getText(),
+                        Org2.getText(), From2.getText(), To2.getText(),
+                        Org3.getText(), From3.getText(), To3.getText(),
+                        Skills.getText(), Projects.getText()
+                );
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Database Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Failed to insert data into the database.");
+                alert.showAndWait();
+                return;
+            }
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 600, 700));
+            stage.show();
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("CV Ready");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("Your CV has been successfully generated!");
+            successAlert.showAndWait();
+
+        } else {
+            boolean ok = updateDatabase(editingUserId);
+            if (!ok) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Failed to update the database record.");
+                alert.showAndWait();
+                return;
+            }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("output.fxml"));
+            Parent root = loader.load();
             outputController controller = loader.getController();
             controller.setData(
-                    id,
+                    editingUserId,
                     FullName.getText(),
                     Email.getText(),
                     Phone.getText(),
@@ -80,24 +138,20 @@ public class MainPageController {
                     Org3.getText(), From3.getText(), To3.getText(),
                     Skills.getText(), Projects.getText()
             );
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Database Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Failed to insert data into the database.");
-            alert.showAndWait();
-            return;
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 600, 700));
+            stage.show();
+
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("CV Updated");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("The CV has been successfully updated!");
+            successAlert.showAndWait();
+
+            editingUserId = null;
+            setEditMode(false);
         }
-
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root, 600, 700));
-        stage.show();
-        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle("CV Ready");
-        successAlert.setHeaderText(null);
-        successAlert.setContentText("Your CV has been successfully generated!");
-        successAlert.showAndWait();
     }
 
     private int insertIntoDatabase() {
@@ -158,5 +212,114 @@ public class MainPageController {
         }
         return -1;
     }
-}
 
+    public void loadUserForEdit(int id) {
+        String sql = "SELECT * FROM users WHERE id = ?";
+        try (Connection conn = Database.connect();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                FullName.setText(rs.getString("Name"));
+                Email.setText(rs.getString("Email"));
+                Phone.setText(rs.getString("Phone"));
+                Address.setText(rs.getString("Address"));
+
+                SSCName.setText(rs.getString("SSC"));
+                SSCGroup.setText(rs.getString("SSCGroup"));
+                SSCGPA.setText(rs.getString("SSCGPA"));
+
+                HSCName.setText(rs.getString("HSC"));
+                HSCGroup.setText(rs.getString("HSCGroup"));
+                HSCGPA.setText(rs.getString("HSCGPA"));
+
+                HonsName.setText(rs.getString("Hons"));
+                HonsDept.setText(rs.getString("HonsDept"));
+                HonsCGPA.setText(rs.getString("HonsCGPA"));
+
+                Org1.setText(rs.getString("Org1"));
+                From1.setText(rs.getString("From1"));
+                To1.setText(rs.getString("To1"));
+
+                Org2.setText(rs.getString("Org2"));
+                From2.setText(rs.getString("From2"));
+                To2.setText(rs.getString("To2"));
+
+                Org3.setText(rs.getString("Org3"));
+                From3.setText(rs.getString("From3"));
+                To3.setText(rs.getString("To3"));
+
+                Skills.setText(rs.getString("Skills"));
+                Projects.setText(rs.getString("Projects"));
+
+                this.editingUserId = id;
+                setEditMode(true);
+            }
+        } catch (Exception e) {
+            System.out.println("❌ Failed to load user for edit");
+            e.printStackTrace();
+        }
+    }
+
+    private boolean updateDatabase(int id) {
+        String sql = "UPDATE users SET Name=?, Email=?, Phone=?, Address=?, " +
+                "SSC=?, SSCGroup=?, SSCGPA=?, HSC=?, HSCGroup=?, HSCGPA=?, " +
+                "Hons=?, HonsDept=?, HonsCGPA=?, " +
+                "Org1=?, From1=?, To1=?, Org2=?, From2=?, To2=?, Org3=?, From3=?, To3=?, Skills=?, Projects=? WHERE id=?";
+
+        try (Connection conn = Database.connect();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, FullName.getText());
+            stmt.setString(2, Email.getText());
+            stmt.setString(3, Phone.getText());
+            stmt.setString(4, Address.getText());
+
+            stmt.setString(5, SSCName.getText());
+            stmt.setString(6, SSCGroup.getText());
+            stmt.setString(7, SSCGPA.getText());
+
+            stmt.setString(8, HSCName.getText());
+            stmt.setString(9, HSCGroup.getText());
+            stmt.setString(10, HSCGPA.getText());
+
+            stmt.setString(11, HonsName.getText());
+            stmt.setString(12, HonsDept.getText());
+            stmt.setString(13, HonsCGPA.getText());
+
+            stmt.setString(14, Org1.getText());
+            stmt.setString(15, From1.getText());
+            stmt.setString(16, To1.getText());
+
+            stmt.setString(17, Org2.getText());
+            stmt.setString(18, From2.getText());
+            stmt.setString(19, To2.getText());
+
+            stmt.setString(20, Org3.getText());
+            stmt.setString(21, From3.getText());
+            stmt.setString(22, To3.getText());
+
+            stmt.setString(23, Skills.getText());
+            stmt.setString(24, Projects.getText());
+
+            stmt.setInt(25, id);
+
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+        } catch (Exception e) {
+            System.out.println("❌ Update failed");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private void setEditMode(boolean isEditing) {
+        if (isEditing) {
+            saveButton.setText("Save Changes");
+            modeLabel.setText("Editing (ID: " + editingUserId + ")");
+        } else {
+            saveButton.setText("Build CV");
+            modeLabel.setText("");
+        }
+    }
+}

@@ -102,6 +102,23 @@ public class outputController {
 
     @FXML
     public void onEditClicked(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPage.fxml"));
+            Parent root = loader.load();
+            MainPageController controller = loader.getController();
+            controller.loadUserForEdit(this.userId);
 
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 600, 700));
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("❌ Failed to open editor");
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to open editor: " + e.getMessage());
+            alert.showAndWait();
+        }
     }
 }
